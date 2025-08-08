@@ -44,5 +44,6 @@ kubectl apply -f k8s/networkpolicy.yaml
 - Update `terraform/backend.tf` with your S3 bucket name and region
 - Run `terraform init`, `terraform plan`, `terraform apply`
 
-Screenshots and Grafana dashboards should be added to `/screenshots` after deployment.
+<img width="872" height="385" alt="image" src="https://github.com/user-attachments/assets/7872d88e-a08c-458d-8bc9-2dc4559cceda" />
+
 
