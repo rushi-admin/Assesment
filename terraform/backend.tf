@@ -1,9 +1,9 @@
 terraform {
   backend "s3" {
-    bucket         = "CHANGE_ME_TFSTATE_BUCKET"
+    bucket         = "assesment_882025"
     key            = "assessment/terraform.tfstate"
     region         = "ap-south-1"
-    dynamodb_table = "CHANGE_ME_DYNAMODB_TABLE"
+    dynamodb_table = "dbassesment8825"
     encrypt        = true
   }
 }
