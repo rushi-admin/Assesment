@@ -47,3 +47,10 @@ kubectl apply -f k8s/networkpolicy.yaml
 <img width="872" height="385" alt="image" src="https://github.com/user-attachments/assets/7872d88e-a08c-458d-8bc9-2dc4559cceda" />
 
 
+<img width="958" height="502" alt="image" src="https://github.com/user-attachments/assets/82313399-b5a7-47f1-97af-8d811df3f25a" />
+
+
+<img width="950" height="463" alt="image" src="https://github.com/user-attachments/assets/4cd8e800-b31a-4fdf-a45f-1f3a79f16d46" />
+
+<img width="956" height="306" alt="image" src="https://github.com/user-attachments/assets/a5b8accf-4199-4f15-8f4a-cd5337302e57" />
+
