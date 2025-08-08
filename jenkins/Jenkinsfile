@@ -5,6 +5,7 @@ pipeline {
         IMAGE_NAME = "rushiadmin/assesment"
         IMAGE_TAG = "latest"
         GIT_REPO = "https://github.com/rushi-admin/Assesment.git"
+        KUBECONFIG_PATH = "/home/ec2-user/.kube/config"
     }
 
     stages {
@@ -30,11 +31,36 @@ pipeline {
                 }
             }
         }
+
+        stage('Deploy to k3d Cluster') {
+            steps {
+                script {
+                    withEnv(["KUBECONFIG=${KUBECONFIG_PATH}"]) {
+                        sh '''
+                            echo "Using context:"
+                            kubectl config current-context
+                            
+                            echo "Applying Kubernetes manifests..."
+                            kubectl apply -f k8s/
+
+                            echo "Waiting for rollout of deployment/hello..."
+                            kubectl rollout status deployment/hello
+
+                            echo "Current pods status:"
+                            kubectl get pods -o wide
+                            
+                            echo "Current services status:"
+                            kubectl get svc -o wide
+                        '''
+                    }
+                }
+            }
+        }
     }
 
     post {
         success {
-            echo "Image pushed to DockerHub successfully!"
+            echo "CI/CD pipeline completed successfully!"
         }
         failure {
             echo "Pipeline failed!"
